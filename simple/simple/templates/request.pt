@@ -1,0 +1,84 @@
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:tal="http://xml.zope.org/namespaces/tal"
+      xmlns:metal="http://xml.zope.org/namespaces/metal"
+      metal:use-macro="base">
+	<tal:block metal:fill-slot="content">
+		<div class="container">
+			<div class="row">
+				<div class="col-md-12"><br><br></div>
+			</div>
+			<div class="row">
+				<div class="col-md-10"></div>
+				<div class="col-md-2">
+					<a href="/logout/" class="btn btn-danger">Выход</a>
+					</div>
+			</div>
+			<div class="row">
+				<div class="col-md-1"></div>
+				<div class="col-md-8"><br><h2 align=center>Введите данные:</h2><br></div>
+			</div>
+			<form name="request-form" method="post" action="/request/" class="form" role="form">
+				<div class="form-group">
+					<div class="col-md-1"></div>
+					<label for="datefrom" class="col-md-1 control-label">С даты:</label>
+					<div class="col-md-2">
+						<input name="datefrom" class="form-control datepicker" type="text" id="datefrom">
+					</div>
+				</div>
+				<div class="form-group">
+					<div class="col-md-12"></div>
+				</div>
+				<div class="form-group">
+					<div class="col-md-1"></div>
+					<label for="datefrom" class="col-md-1 control-label">По дату:</label>
+					<div class="col-md-2">
+						<input name="dateto" class="form-control datepicker" type="text" id="dateto">
+					</div>
+				</div>
+				<div class="form-group">
+					<div class="col-md-12"></div>
+				</div>
+				<div class="form-group">
+					<div class="col-md-1"></div>
+					<label for="sender" class="col-md-1 control-label">От:</label>
+					<div class="col-md-2">
+						<input name="sender" class="form-control" placeholder="Адрес отправителя" type="email" id="sender">
+					</div>
+					<div class="col-md-6"><span class="help-block">полный или часть. Оставьте пустым, если нужны все сообщения.</span></div>
+				</div>
+				<div class="form-group">
+					<div class="col-md-12"></div>
+				</div>
+				<div class="form-group">
+					<div class="col-md-1"></div>
+					<label for="recipient" class="col-md-1 control-label" valign=center>Кому:</label>
+					<div class="col-md-2">
+						<input name="recipient" class="form-control" placeholder="Адрес получателя" type="email" id="recipient">
+					</div>
+					<div class="col-md-6"><span class="help-block" valign=center>полный или часть. Оставьте пустым, если нужны все сообщения.</span></div>
+				</div>
+				<div class="form-group">
+					<div class="col-md-12"></div>
+				</div>
+				<div class="form-group">
+					<div class="col-md-1"></div>
+					<label for="category" class="col-md-1 control-label">Категория:</label>
+					<div class="col-md-2">
+						<select name="category" multiple class="form-control" id="category" size="6">
+							<option selected value="all">Все</option>
+							<option tal:repeat="cat category" value="%${cat[0]}%">${cat[1]}</option>
+						</select>
+					</div>
+					<div class="col-md-6"><span class="help-block">Чтобы выбрать несколько категорий удерживайте Ctrl.</span></div>
+				</div>
+				<div class="form-group" valign=center>
+					<div class="col-md-12"><br></div>
+				</div>
+				<div class="form-group">
+					<div class="col-md-8 col-md-offset-1"><button type="submit" class="btn btn-success  btn-block">Искать</button></div>
+				</div>
+			</form>
+		</div>
+	</tal:block>
+
+</html>

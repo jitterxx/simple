@@ -1,0 +1,22 @@
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:tal="http://xml.zope.org/namespaces/tal"
+      xmlns:metal="http://xml.zope.org/namespaces/metal"
+      metal:use-macro="base">
+	<tal:block metal:fill-slot="content">
+		<div class="container">
+		<div class="row">
+
+		<div class="col-md-6 col-md-offset-3">
+		<form class="form-signin" role="form" method="post" action="/login/">
+			<h2 class="form-signin-heading">Авторизуйтесь</h2>
+			<input name="username" type="text" class="form-control" placeholder="Имя пользователя" required autofocus data-translatable-string="Username">
+			<input name="password" type="password" class="form-control" placeholder="Пароль" required data-translatable-string="Password">
+			<button class="btn btn-lg btn-primary btn-block" type="submit">Войти</button>
+		</form>
+		</div>
+
+		</div>
+		</div> <!-- /container -->
+	</tal:block>
+
+</html>
